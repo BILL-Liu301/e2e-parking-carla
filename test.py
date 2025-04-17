@@ -24,12 +24,10 @@ def game_loop(args):
         parking_agent = ParkingAgent(network_evaluator, args)
         controller = KeyboardControl(network_evaluator.world)
 
-        display = pygame.display.set_mode((args.width, args.height),
-                                          pygame.HWSURFACE | pygame.DOUBLEBUF)
-
-        steer_wheel_img = pygame.image.load("./resource/steer_wheel.png")
-        steer_wheel_img = pygame.transform.scale(steer_wheel_img, (100, 100))
-        font = pygame.font.Font(None, 25)
+        # display = pygame.display.set_mode((args.width, args.height), pygame.HWSURFACE | pygame.DOUBLEBUF)
+        # steer_wheel_img = pygame.image.load("./resource/steer_wheel.png")
+        # steer_wheel_img = pygame.transform.scale(steer_wheel_img, (100, 100))
+        # font = pygame.font.Font(None, 25)
 
         clock = pygame.time.Clock()
         while True:
@@ -39,10 +37,10 @@ def game_loop(args):
                 return
             parking_agent.tick()
             network_evaluator.tick(clock)
-            network_evaluator.render(display)
-            show_control_info(display, parking_agent.get_eva_control(), steer_wheel_img,
-                              args.width, args.height, font)
-            pygame.display.flip()
+            # network_evaluator.render(display)
+            # show_control_info(display, parking_agent.get_eva_control(), steer_wheel_img,
+            #                   args.width, args.height, font)
+            # pygame.display.flip()
 
     finally:
         if network_evaluator:

@@ -200,7 +200,7 @@ class NetworkEvaluator:
         self._ego_transform = self._ego_transform_generator.get_eva_ego_transform(self._eva_parking_nums,
                                                                                   self._eva_parking_idx)
         self._world.player.set_transform(self._ego_transform)
-        self._world.init_static_npc(self._seed, self._parking_goal_index)
+        self._world.init_static_npc(self._seed, self._parking_goal_index)  # 设定npc的位置
         self._eva_parking_goal = [self._parking_goal.x, self._parking_goal.y, 180]
 
         self._eva_task_idx = 0
