@@ -301,7 +301,7 @@ class World(object):
             [f, 0, Cu],
             [0, f, Cv],
             [0, 0, 1]
-        ], dtype=np.float)
+        ], dtype=np.float32)
 
         self._cam2pixel = np.array([[0, 1, 0, 0],
                                     [0, 0, -1, 0],

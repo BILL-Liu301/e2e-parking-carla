@@ -24,9 +24,9 @@ class NetworkEvaluator:
 
         # only eva odd slot: 1, 3, 5, ..., 15
         # 2-1, index 15 + 1 = 16
-        self._parking_goal_index = 16
-        self._parking_goal = parking_position.parking_vehicle_locations_Town04[self._parking_goal_index]
-        self._ego_transform_generator = parking_position.EgoPosTown04()
+        self._parking_goal_index = 16  # 目标车位的id，但我感觉这里的设定没有任何意义
+        self._parking_goal = parking_position.parking_vehicle_locations_Town04[self._parking_goal_index]  # 目标车位，Location
+        self._ego_transform_generator = parking_position.EgoPosTown04()  # 自车位置
 
         now = datetime.now()
         result_dir = '_'.join(map(lambda x: '%02d' % x,
